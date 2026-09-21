@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JE Commerce LLC | E-Commerce Retail & Wholesale Sourcing</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#101B2D',
+                            800: '#16243A',
+                            700: '#243650',
+                            card: '#17263D'
+                        },
+                        gold: {
+                            400: '#f59e0b',
+                            500: '#eab308',
+                            600: '#d97706',
+                            metallic: '#d4af37'
+                        },
+                        brandBlue: {
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#1d4ed8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #101B2D;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .glass-header {
+            background: rgba(16, 27, 45, 0.90);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .hero-bg {
+            background-image:
+                linear-gradient(90deg,
+                    rgba(16, 27, 45, 0.96) 0%,
+                    rgba(16, 27, 45, 0.86) 34%,
+                    rgba(16, 27, 45, 0.46) 64%,
+                    rgba(16, 27, 45, 0.20) 100%),
+                linear-gradient(180deg,
+                    rgba(16, 27, 45, 0.03) 0%,
+                    rgba(16, 27, 45, 0.10) 68%,
+                    rgba(16, 27, 45, 0.76) 100%),
+                url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=85&w=2200');
+            background-size: cover;
+            background-position: center 42%;
+            background-repeat: no-repeat;
+        }
+
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-image:
+                    linear-gradient(180deg,
+                        rgba(16, 27, 45, 0.80) 0%,
+                        rgba(16, 27, 45, 0.69) 52%,
+                        rgba(16, 27, 45, 0.92) 100%),
+                    url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=85&w=1400');
+                background-position: center 35%;
+            }
+        }
+
+
+        .card-gradient {
+            background: linear-gradient(145deg, #17263D 0%, #121F33 100%);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-gradient:hover {
+            transform: translateY(-4px);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 12px 30px -10px rgba(2, 132, 199, 0.25);
+        }
+
+        .glow-button {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            box-shadow: 0 0 20px rgba(2, 132, 199, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+            transform: translateY(-1px);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #101B2D;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #243650;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-navy-900">
+
+    <header class="fixed top-0 left-0 w-full z-50 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-3.5 group">
+                <!-- Logo Emblem SVG -->
+                <div class="relative w-12 h-12 flex-shrink-0 group-hover:scale-105 transition-transform duration-200">
+                    <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-md">
+                        <defs>
+                            <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#0F4C81" />
+                                <stop offset="50%" stop-color="#0A2540" />
+                                <stop offset="100%" stop-color="#030A16" />
+                            </linearGradient>
+                            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#FFE082" />
+                                <stop offset="50%" stop-color="#F59E0B" />
+                                <stop offset="100%" stop-color="#B45309" />
+                            </linearGradient>
+                        </defs>
+
+                        <rect x="6" y="6" width="188" height="188" rx="36" fill="url(#bgGrad)" stroke="url(#goldGrad)" stroke-width="8"/>
+                        <rect x="14" y="14" width="172" height="172" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="2"/>
+
+                        <text x="32" y="142" font-family="'Inter', sans-serif" font-weight="900" font-size="110" fill="#FFFFFF" letter-spacing="-4">J</text>
+                        <text x="96" y="142" font-family="'Inter', sans-serif" font-weight="900" font-size="110" fill="#FFFFFF" letter-spacing="-4">E</text>
+
+                        <path d="M 25 152 Q 90 120 160 42" fill="none" stroke="url(#goldGrad)" stroke-width="14" stroke-linecap="round"/>
+                        <path d="M 25 152 Q 90 120 160 42" fill="none" stroke="#FFF" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
+                        <polygon points="168,26 168,58 138,42" fill="url(#goldGrad)"/>
+                    </svg>
+                </div>
+
+                <!-- Vertical Gold Divider -->
+                <div class="h-9 w-[2.5px] bg-gradient-to-b from-amber-200 via-amber-500 to-amber-700 rounded-full opacity-80"></div>
+
+                <!-- Wordmark -->
+                <div class="flex flex-col">
+                    <div class="flex items-baseline gap-1">
+                        <span class="font-extrabold text-lg sm:text-xl tracking-tight text-white">
+                            <span class="text-brandBlue-500">JE</span> COMMERCE
+                        </span>
+                        <span class="font-semibold text-xs tracking-wider text-slate-300">LLC</span>
+                    </div>
+                    <span class="text-[10px] sm:text-[11px] font-medium tracking-wider text-slate-400 uppercase -mt-0.5">
+                        E-Commerce Retail & Wholesale Sourcing
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#home" class="text-sm font-medium text-slate-300 hover:text-gold-400 transition-colors">Home</a>
+                <a href="#about" class="text-sm font-medium text-slate-300 hover:text-gold-400 transition-colors">About Us</a>
+                <a href="#services" class="text-sm font-medium text-slate-300 hover:text-gold-400 transition-colors">Wholesale Sourcing</a>
+                <a href="#principles" class="text-sm font-medium text-slate-300 hover:text-gold-400 transition-colors">Our Approach</a>
+                <a href="#contact" class="text-sm font-medium text-slate-300 hover:text-gold-400 transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:flex items-center">
+                <a href="#contact" class="glow-button text-white px-5 py-2.5 rounded-lg font-semibold text-sm border border-gold-metallic/30 flex items-center gap-2">
+                    <span>Partner With Us</span>
+                    <i class="fa-solid fa-arrow-right text-xs text-gold-400"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" aria-label="Toggle navigation menu" class="md:hidden text-slate-300 hover:text-white p-2 focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-navy-900 border-b border-slate-800 px-6 py-4 flex flex-col gap-4">
+            <a href="#home" onclick="closeMobileMenu()" class="text-slate-300 hover:text-gold-400 font-medium py-1">Home</a>
+            <a href="#about" onclick="closeMobileMenu()" class="text-slate-300 hover:text-gold-400 font-medium py-1">About Us</a>
+            <a href="#services" onclick="closeMobileMenu()" class="text-slate-300 hover:text-gold-400 font-medium py-1">Wholesale Sourcing</a>
+            <a href="#principles" onclick="closeMobileMenu()" class="text-slate-300 hover:text-gold-400 font-medium py-1">Our Approach</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="text-slate-300 hover:text-gold-400 font-medium py-1">Contact</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="w-full text-center bg-brandBlue-600 hover:bg-brandBlue-500 text-white py-3 rounded-lg font-semibold text-sm transition-all border border-gold-metallic/30">
+                Partner With Us
+            </a>
+        </div>
+    </header>
+
+    <section id="home" class="hero-bg min-h-[88vh] flex items-center pt-28 pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-navy-900 to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="max-w-2xl lg:max-w-3xl">
+
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-gold-400 text-xs font-semibold tracking-wide uppercase mb-6 backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-gold-400"></span>
+                    Connecticut, USA • Wholesale Sourcing & E-Commerce
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white tracking-tight leading-[1.14] mb-6 pb-4">
+                    Reliable E-Commerce Retail
+                    <span class="block inline-block pb-2 text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-gold-metallic to-brandBlue-500">
+                        & Wholesale Sourcing
+                    </span>
+                </h1>
+
+                <p class="text-base sm:text-lg lg:text-xl text-slate-200/90 font-normal leading-relaxed mb-8 max-w-2xl">
+                    JE Commerce LLC builds professional sourcing relationships with brands, manufacturers, authorized distributors, and reputable wholesale suppliers through disciplined purchasing and clear communication.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <a href="#contact" class="glow-button text-white px-8 py-4 rounded-xl font-semibold text-base text-center flex items-center justify-center gap-3 border border-gold-metallic/40">
+                        <span>Discuss Wholesale Opportunities</span>
+                        <i class="fa-solid fa-handshake text-gold-400"></i>
+                    </a>
+
+                    <a href="#about" class="bg-white/5 hover:bg-white/10 text-slate-100 border border-white/10 px-8 py-4 rounded-xl font-semibold text-base text-center backdrop-blur-sm flex items-center justify-center gap-2 transition-all">
+                        <span>About Us</span>
+                        <i class="fa-solid fa-arrow-down text-xs text-gold-400"></i>
+                    </a>
+                </div>
+
+                <div class="mt-10 pt-5 border-t border-white/10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-300">
+                    <span class="inline-flex items-center gap-2">
+                        <i class="fa-solid fa-comments text-gold-400"></i>
+                        Professional Communication
+                    </span>
+                    <span class="inline-flex items-center gap-2">
+                        <i class="fa-solid fa-boxes-stacked text-gold-400"></i>
+                        Responsible Purchasing
+                    </span>
+                    <span class="inline-flex items-center gap-2">
+                        <i class="fa-solid fa-handshake-angle text-gold-400"></i>
+                        Long-Term Supplier Focus
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-navy-800/40 border-t border-slate-800/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left Text -->
+                <div>
+                    <div class="inline-flex items-center gap-2 text-gold-400 font-semibold text-xs tracking-widest uppercase mb-3">
+                        <i class="fa-solid fa-building text-xs"></i>
+                        <span>Corporate Overview</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mb-6 leading-tight">
+                        Organized, Disciplined, and Focused on Sustainable Growth
+                    </h2>
+                    <p class="text-slate-300 leading-relaxed mb-5">
+                        JE Commerce LLC is an e-commerce retail business operating out of Connecticut. We specialize in evaluating consumer demand, sourcing quality products through reputable wholesale channels, and reselling through established online marketplaces.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed mb-8">
+                        Our goal is to build long-term, mutually beneficial commercial relationships by placing a strong emphasis on professional communication, disciplined inventory evaluation, and respect for supplier distribution policies.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-3 rounded-xl bg-navy-card border border-slate-800">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Respect for Brand Guidelines</h4>
+                                <p class="text-xs text-slate-400">Prepared to respect supplier MAP guidelines and marketplace resale terms where applicable.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-3 rounded-xl bg-navy-card border border-slate-800">
+                            <div class="w-10 h-10 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-sliders"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Disciplined Purchasing</h4>
+                                <p class="text-xs text-slate-400">Thorough analysis of product turn-rates and market demand prior to placing orders.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Component -->
+                <div class="relative">
+                    <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-gold-500 to-brandBlue-600 opacity-20 blur-xl"></div>
+                    <div class="relative rounded-2xl card-gradient p-8 border border-slate-700/60">
+                        <div class="flex items-center gap-3 mb-6 border-b border-slate-800 pb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brandBlue-600/20 border border-brandBlue-500/30 flex items-center justify-center text-gold-400 font-bold">
+                                JE
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white">JE Commerce LLC</h3>
+                                <p class="text-xs text-slate-400">Connecticut, USA • E-Commerce Retail & Wholesale Sourcing</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-xl bg-navy-900/90 border border-slate-800">
+                                <span class="text-xs font-bold text-gold-400 uppercase tracking-wider block mb-1">Primary Focus</span>
+                                <p class="text-sm text-slate-200">Wholesale product sourcing and e-commerce retail resale.</p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-navy-900/90 border border-slate-800">
+                                <span class="text-xs font-bold text-gold-400 uppercase tracking-wider block mb-1">Target Partners</span>
+                                <p class="text-sm text-slate-200">Brands, manufacturers, primary wholesalers, and authorized distributors.</p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-navy-900/90 border border-slate-800">
+                                <span class="text-xs font-bold text-gold-400 uppercase tracking-wider block mb-1">Operating Standards</span>
+                                <p class="text-sm text-slate-200">Professional communication, responsible inventory management, and long-term supplier relationships.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 text-gold-400 font-semibold text-xs tracking-widest uppercase mb-3">
+                    <i class="fa-solid fa-boxes-packing text-xs"></i>
+                    <span>Sourcing & Retail Focus</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                    Wholesale Opportunities & Sourcing
+                </h2>
+                <p class="text-slate-400 mt-3 text-base">
+                    How JE Commerce LLC works with suppliers, brand owners, and primary distributors.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="card-gradient rounded-2xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl mb-6">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Product Sourcing</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Evaluating consumer demand and catalog opportunities across varied consumer goods categories to identify sustainable inventory choices.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Market demand research</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Category evaluation</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Responsible ordering</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card-gradient rounded-2xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl mb-6">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Brand Relationships</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Building transparent partnerships with brand owners who seek reliable retail partners that respect brand policies and channel guidelines.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Policy adherence</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Transparent communication</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Long-term orientation</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card-gradient rounded-2xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl mb-6">
+                            <i class="fa-solid fa-truck-ramp-box"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Wholesale Accounts</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Establishing standard commercial wholesale accounts with primary distributors and manufacturers for consistent product purchasing.
+                        </p>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2 border-t border-slate-800 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Commercial credit/terms</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Professional purchasing</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Reliable account management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="principles" class="py-20 bg-navy-800/60 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <div class="inline-flex items-center gap-2 text-gold-400 font-semibold text-xs tracking-widest uppercase mb-3">
+                    <i class="fa-solid fa-scale-balanced text-xs"></i>
+                    <span>Commercial Ethics</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                    Our Operating Standards
+                </h2>
+                <p class="text-slate-400 mt-2 text-sm">
+                    How JE Commerce LLC maintains professional integrity across supplier channels.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-xl bg-navy-card border border-slate-800 text-center">
+                    <div class="w-12 h-12 rounded-full bg-gold-500/10 text-gold-400 flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </div>
+                    <h4 class="text-white font-bold text-sm mb-2">MAP Policy Awareness</h4>
+                    <p class="text-xs text-slate-400">Prepared to honor supplier Minimum Advertised Price (MAP) guidelines where applicable.</p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-navy-card border border-slate-800 text-center">
+                    <div class="w-12 h-12 rounded-full bg-gold-500/10 text-gold-400 flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
+                    <h4 class="text-white font-bold text-sm mb-2">Approved Resale Channels</h4>
+                    <p class="text-xs text-slate-400">Reselling through agreed online channels and respecting supplier marketplace requirements where applicable.</p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-navy-card border border-slate-800 text-center">
+                    <div class="w-12 h-12 rounded-full bg-gold-500/10 text-gold-400 flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    <h4 class="text-white font-bold text-sm mb-2">Clear Communication</h4>
+                    <p class="text-xs text-slate-400">Prompt responses, organized records, and direct points of contact for every account.</p>
+                </div>
+
+                <div class="p-6 rounded-xl bg-navy-card border border-slate-800 text-center">
+                    <div class="w-12 h-12 rounded-full bg-gold-500/10 text-gold-400 flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h4 class="text-white font-bold text-sm mb-2">Sustainable Purchasing</h4>
+                    <p class="text-xs text-slate-400">Order commitments scaled to real consumer demand and healthy inventory turnover.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 flex flex-col justify-between">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-gold-400 font-semibold text-xs tracking-widest uppercase mb-3">
+                            <i class="fa-solid fa-address-book text-xs"></i>
+                            <span>Corporate Contact</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mb-6">
+                            Start a Wholesale Dialogue
+                        </h2>
+                        <p class="text-slate-300 leading-relaxed mb-8 text-sm">
+                            If you are a manufacturer, brand owner, or authorized primary wholesale distributor, contact our team to discuss potential sourcing opportunities.
+                        </p>
+
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 p-4 rounded-xl card-gradient">
+                                <div class="w-11 h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center text-lg flex-shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">General Inquiries</p>
+                                    <a href="mailto:admin@jecommercegroup.com" class="text-white font-semibold text-sm hover:text-gold-400 transition-colors">admin@jecommercegroup.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 rounded-xl card-gradient">
+                                <div class="w-11 h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center text-lg flex-shrink-0">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Purchasing & Wholesale</p>
+                                    <a href="mailto:purchasing@jecommercegroup.com" class="text-white font-semibold text-sm hover:text-gold-400 transition-colors">purchasing@jecommercegroup.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 rounded-xl card-gradient">
+                                <div class="w-11 h-11 rounded-lg bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center text-lg flex-shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Location</p>
+                                    <p class="text-white font-semibold text-sm">Connecticut, USA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Complete 7-Field Form Container -->
+                <div class="lg:col-span-7">
+                    <div class="card-gradient rounded-2xl p-8 sm:p-10 border border-slate-700/60">
+                        <h3 class="text-2xl font-bold text-white mb-2">Business Inquiry Form</h3>
+                        <p class="text-xs text-slate-400 mb-6">Please submit your company information below to reach our purchasing department.</p>
+
+                        <!-- Notification Container -->
+                        <div id="formAlert" class="hidden mb-6 p-4 rounded-lg text-sm"></div>
+
+                        <form id="business-inquiry-form"
+                              action="https://docs.google.com/forms/d/e/1FAIpQLSeoFqLRLQ3DV_84IVFI1jH0LY3Vixm_E3fZTUCESk2kDb6DmQ/formResponse"
+                              method="POST"
+                              target="hidden-google-form-response"
+                              class="space-y-4">
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">1. Full Name *</label>
+                                    <input type="text" name="entry.83239954" required placeholder="John Doe" class="w-full bg-navy-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-400">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">2. Business Email *</label>
+                                    <input type="email" name="entry.11148680" required placeholder="john@company.com" class="w-full bg-navy-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-400">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">3. Company Name *</label>
+                                    <input type="text" name="entry.123497775" required placeholder="Acme Brands LLC" class="w-full bg-navy-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-400">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">4. Phone Number</label>
+                                    <input type="tel" name="entry.757815929" placeholder="+1 (555) 000-0000" class="w-full bg-navy-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-400">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">5. Company Website</label>
+                                    <input type="url" name="entry.1143438871" placeholder="https://company.com" class="w-full bg-navy-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-400">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">6. Type of Inquiry *</label>
+                                    <select name="entry.130802687" required class="w-full bg-navy-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-gold-400">
+                                        <option value="" disabled selected>Select Inquiry Type</option>
+                                        <option value="Wholesale Opportunities">Wholesale Opportunities</option>
+                                        <option value="Product Sourcing Opportunity">Product Sourcing Opportunity</option>
+                                        <option value="Brand Relationship">Brand Relationship</option>
+                                        <option value="Manufacturer Inquiry">Manufacturer Inquiry</option>
+                                        <option value="Supplier Opportunity">Supplier Opportunity</option>
+                                        <option value="General Partnership">General Partnership</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">7. Message / Partnership Details *</label>
+                                <textarea name="entry.502793379" rows="4" required placeholder="Provide details regarding product lines, wholesale terms, or inquiry details..." class="w-full bg-navy-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-400"></textarea>
+                            </div>
+
+                            <button type="submit" id="submitBtn" class="w-full glow-button text-white font-semibold py-3.5 rounded-lg text-sm flex items-center justify-center gap-2 border border-gold-metallic/30 mt-4">
+                                <span>Submit Inquiry</span>
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
+                            </button>
+                        </form>
+                        <iframe name="hidden-google-form-response" class="hidden" title="Google Forms submission"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-navy-900 border-t border-slate-800 py-12 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <!-- Footer Info -->
+                <div class="flex flex-col items-center md:items-start gap-2 text-center md:text-left">
+                    <p class="font-bold text-white text-sm">JE Commerce LLC</p>
+                    <p>Connecticut, USA • E-Commerce Retail & Wholesale Sourcing</p>
+                    <p class="text-slate-500">© 2026 JE Commerce LLC. All rights reserved.</p>
+                </div>
+
+                <!-- Footer Navigation -->
+                <div class="flex flex-wrap justify-center gap-6 text-slate-300 font-medium">
+                    <a href="#home" class="hover:text-gold-400 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-gold-400 transition-colors">About</a>
+                    <a href="#services" class="hover:text-gold-400 transition-colors">Wholesale</a>
+                    <a href="#principles" class="hover:text-gold-400 transition-colors">Standards</a>
+                    <a href="#contact" class="hover:text-gold-400 transition-colors">Contact</a>
+                </div>
+
+                <!-- Back to top button -->
+                <div>
+                    <a href="#home" aria-label="Back to top" class="w-10 h-10 rounded-full bg-navy-800 border border-slate-700 hover:border-gold-400 text-slate-300 hover:text-gold-400 flex items-center justify-center transition-all">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        const inquiryForm = document.getElementById('business-inquiry-form');
+        const submitBtn = document.getElementById('submitBtn');
+        const alertBox = document.getElementById('formAlert');
+
+        inquiryForm.addEventListener('submit', () => {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch animate-spin"></i> Sending...';
+
+            setTimeout(() => {
+                alertBox.className = "mb-6 p-4 rounded-lg text-sm bg-emerald-950/80 border border-emerald-500/50 text-emerald-200 block";
+                alertBox.innerHTML = '<div class="flex items-center gap-2 font-bold mb-1"><i class="fa-solid fa-circle-check text-emerald-400"></i> Inquiry Submitted</div>Thank you. Your business inquiry has been submitted to JE Commerce LLC.';
+                inquiryForm.reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span>Submit Inquiry</span> <i class="fa-solid fa-paper-plane text-xs"></i>';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
