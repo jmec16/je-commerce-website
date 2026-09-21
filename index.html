@@ -541,7 +541,7 @@
 
                             <div class="grid sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">1. Full Name *</label>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">1. Name *</label>
                                     <input type="text" name="entry.83239954" required placeholder="John Doe" class="w-full bg-navy-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-400">
                                 </div>
                                 <div>
@@ -556,7 +556,7 @@
                                     <input type="text" name="entry.123497775" required placeholder="Acme Brands LLC" class="w-full bg-navy-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-400">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">4. Phone Number</label>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">4. Phone</label>
                                     <input type="tel" name="entry.757815929" placeholder="+1 (555) 000-0000" class="w-full bg-navy-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-400">
                                 </div>
                             </div>
@@ -564,25 +564,25 @@
                             <div class="grid sm:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">5. Company Website</label>
-                                    <input type="url" name="entry.1143438871" placeholder="https://company.com" class="w-full bg-navy-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-400">
+                                    <input type="text" name="entry.1143438871" placeholder="https://company.com" class="w-full bg-navy-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-400">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">6. Type of Inquiry *</label>
                                     <select name="entry.130802687" required class="w-full bg-navy-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-gold-400">
                                         <option value="" disabled selected>Select Inquiry Type</option>
                                         <option value="Wholesale Opportunities">Wholesale Opportunities</option>
-                                        <option value="Product Sourcing Opportunity">Product Sourcing Opportunity</option>
-                                        <option value="Brand Relationship">Brand Relationship</option>
-                                        <option value="Manufacturer Inquiry">Manufacturer Inquiry</option>
-                                        <option value="Supplier Opportunity">Supplier Opportunity</option>
-                                        <option value="General Partnership">General Partnership</option>
-                                        <option value="Other">Other</option>
+                                        <option value="Distribution Opportunities">Distribution Opportunities</option>
+                                        <option value="Product Sourcing">Product Sourcing</option>
+                                        <option value="Brand Relationships">Brand Relationships</option>
+                                        <option value="Supplier Relationships">Supplier Relationships</option>
+                                        <option value="General Business Partnerships">General Business Partnerships</option>
+                                        
                                     </select>
                                 </div>
                             </div>
 
                             <div>
-                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">7. Message / Partnership Details *</label>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">7. Message *</label>
                                 <textarea name="entry.502793379" rows="4" required placeholder="Provide details regarding product lines, wholesale terms, or inquiry details..." class="w-full bg-navy-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-gold-400"></textarea>
                             </div>
 
@@ -652,7 +652,7 @@
 
             setTimeout(() => {
                 alertBox.className = "mb-6 p-4 rounded-lg text-sm bg-emerald-950/80 border border-emerald-500/50 text-emerald-200 block";
-                alertBox.innerHTML = '<div class="flex items-center gap-2 font-bold mb-1"><i class="fa-solid fa-circle-check text-emerald-400"></i> Inquiry Submitted</div>Thank you. Your business inquiry has been submitted to JE Commerce LLC.';
+                alertBox.innerHTML = '<div class="flex items-center gap-2 font-bold mb-1"><i class="fa-solid fa-circle-check text-emerald-400"></i> Inquiry Submitted</div>Thank you. Your business inquiry has been sent.';
                 inquiryForm.reset();
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<span>Submit Inquiry</span> <i class="fa-solid fa-paper-plane text-xs"></i>';
